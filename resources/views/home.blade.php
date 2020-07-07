@@ -37,7 +37,7 @@
             </ul>
     		
             <hr>
-            <p>Tu carrito de compras presenta {{ auth()->user()->cart->details->count() }} </p>
+            <p>Tu carrito de compras presenta {{ auth()->user()->cart->details->count() }} productos agregados</p>
             <table class="table">
                     <thead>
                         <tr>
@@ -64,7 +64,7 @@
                         
                             <td>$ {{ $detail->product->precio }} </td>
                             <td>{{ $detail->quantity }}</td>
-                            <td>$ {{ $detail->quantity * $detail->product->price }}</td>
+                            <td>$ {{ $detail->quantity * $detail->product->precio }}</td>
                             <td class="td-actions">
                                
                                 <form method="post" action="{{ url('/cart') }}">
@@ -85,6 +85,8 @@
                    @endforeach
                     </tbody>
                 </table>
+
+                <p><strong>Importe a pagar: </strong>{{ auth()->user()->cart->total }}</p>
                 <div class="text-center">
                 <form method="post" action="{{ url('/order') }}">
                     {{ csrf_field() }}

@@ -5,7 +5,7 @@
 @section('body-class', 'product-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Portada.jpg') }}');">
    
 </div>
 
@@ -45,20 +45,44 @@
                             <input type="text" class="form-control" name="Am" value="{{ old('Am') }}">
                         </div>
                     </div>
+                   
                     <div class="col-sm-3">
                         <div class="form-group label-floating">
                             <label class="control-label">Nombre Artístico del Artista</label>
                             <input type="text" class="form-control" name="nameArt" value="{{ old('nameArt') }}">
                         </div>
                     </div>
-
+                    <div class="col-sm-3">
+                        <div class="form-group label-floating">
+                            <label class="control-label">URL Facebook</label>
+                            <input type="text" class="form-control" name="urlFa" value="{{ old('urlFa') }}">
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <label for="exampleFormControlFile1">Imagen de perfil</label>
+                        <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen') }}">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="exampleFormControlFile1">Imagen de Portada</label>
+                        <input type="file" name="imagenAlu" class="form-control-file" value="{{ old('imagenAlu') }}">
+                    </div>
                    
-
-                    <br>
-                    <button class="btn btn-success">Registrar</button>
-                    <a href="{{ url('/admin/artists') }}" class="btn btn-default">Cancelar</a>
-
                    
+                   
+                    <div class="col-sm-11">
+                         <textarea class="form-control" placeholder="Descripción" rows="5" name="descripcion">{{ old('descripcion') }}</textarea>
+                    </div>
+                    <!-- <div class="col-sm-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Descripción</label>
+                            <input type="text" class="form-control" name="descripcion" value="{{ old('descripcion') }}">
+                        </div>
+                    </div> -->
+
+                    
+                    <button class="btn btn-success"><i class="material-icons">add</i> Registrar</button>
+                    <a href="{{ url('/admin/artists') }}" class="btn btn-danger"><i class="material-icons">cancel</i> Cancelar</a>                  
                 </form>
 
         </div>    

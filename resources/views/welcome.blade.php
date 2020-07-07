@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('tittle', 'Bienvenido a Kamaleon Arte Decorativo')
+@section('tittle', 'Bienvenido a ' . config('app.name'))
 
 @section('body-class', 'landing-page')
 
@@ -43,7 +43,8 @@
             <div class="col-md-6">
            
             
-                <h1 class="title">Bienvenidos</h1>
+                <h1 class="title">Bienvenido a {{ config('app.name')
+                 }}</h1>
                 <h4>Aquí va una descripción de sobre la página o alguna frase</h4>
                 <br />
                 <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
@@ -139,59 +140,45 @@
     </div>
 
 
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
+    <div class="section landing-section">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="text-center title">¿Aún no te has registrado?</h2>
+                    <h4 class="text-center description">Regístrate ingresando tus datos básicos, y podrás realizar tus pedidos a través de nuestro carrito de compras. Si aún no te decides, de todas formas, con tu cuenta de usuario podrás hacer todas tus consultas sin compromiso.</h4>
+                    <form class="contact-form" method="get" action="{{ url('/register') }}">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Nombre</label>
+                                    <input type="text" class="form-control" name="name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                            </div>
+                        </div>
 
-					
-						<div class="card card-raised card-carousel">
-							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-								<div class="carousel slide" data-ride="carousel">
+                        {{--<div class="form-group label-floating">--}}
+                            {{--<label class="control-label">Tu mensaje</label>--}}
+                            {{--<textarea class="form-control" rows="4"></textarea>--}}
+                        {{--</div>--}}
 
-								
-									<ol class="carousel-indicators">
-										<li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-										<li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-										<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-									</ol>
-
-									
-									<div class="carousel-inner">
-										<div class="item">
-											<img src="img/Empresa/Portada.jpg" alt="Awesome Image">
-											<div class="carousel-caption">
-												<h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
-											</div>
-										</div>
-										<div class="item active">
-											<img src="img/Empresa/Portada.jpg" alt="Awesome Image">
-											<div class="carousel-caption">
-												<h4><i class="material-icons">location_on</i> Somewhere Beyond, United States</h4>
-											</div>
-										</div>
-										<div class="item">
-											<img src="img/Empresa/Portada.jpg" alt="Awesome Image">
-											<div class="carousel-caption">
-												<h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
-											</div>
-										</div>
-									</div>
-
-									
-									<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-										<i class="material-icons">keyboard_arrow_left</i>
-									</a>
-									<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-										<i class="material-icons">keyboard_arrow_right</i>
-									</a>
-								</div>
-							</div>
-						</div>
-					
-
-					</div>
-				</div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4 text-center">
+                                <button class="btn btn-primary btn-raised">
+                                    Iniciar registro
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
+
+        </div>
+     
             <br>
 		
 

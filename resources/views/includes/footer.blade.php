@@ -55,7 +55,7 @@
 						<div class="social">
 							<div class="row" style="display: contents;">
 								<div id="redesFooterIft">
-									<a href="http://facebook.com/IFT.mx" target="_blank" class="btnTransparentFooter" style="color:#1e6172;">
+									<a href="http://facebook.com" target="_blank" class="btnTransparentFooter" style="color:#1e6172;">
 										<span class="fa-stack fa-2x">
 											<em class="fa fa-circle fa-stack-2x iconGrayColor"></em>
 											<em id="facebook" class="fa fa-stack-1x fa-facebook" style="color: #ffffff"></em>

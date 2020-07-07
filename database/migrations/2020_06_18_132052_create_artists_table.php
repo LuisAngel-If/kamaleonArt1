@@ -19,6 +19,10 @@ class CreateArtistsTable extends Migration
             $table->string('Ap')->nullable();
             $table->string('Am')->nullable();
             $table->string('nameArt')->nullable();
+            $table->string('imagen')->nullable();
+            $table->string('imagenAlu')->nullable();
+            $table->string('urlFa')->nullable();
+            $table->string('descripcion', 1300)->nullable();
             $table->boolean('enabled')->default(true);
             $table->timestamps();
         });

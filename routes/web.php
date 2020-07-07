@@ -17,10 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/', 'TestController@welcome');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search', 'SearchController@show');
+Route::get('/products/json', 'SearchController@data');
 
 Route::get('/products/{id}', 'ProductController@show'); //mostrar
+
+
+
+// Route::get('/', 'TestController@welcome');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/products/{id}', 'ProductController@show'); //mostrar
+Route::get('/artists/{id}', 'ProductController@showArt'); //mostrar
 Route::get('/techniques/{techniques}', 'TechniqueController@show'); //mostrar
 
 Route::post('/cart', 'CartDetailController@store');
@@ -35,12 +43,14 @@ Route::get('/nosotros', function () {
 Route::get('/conocenos', function () {
     return view('/conocenos');
 });
-
+Route::post('/contact', 'MensajeController@store');
 Route::get('/galeria', function () {
     return view('/galeria');
 });
 
 Route::get('/tienda', 'TestController@welcome');
+Route::get('/artistas', 'TestController@welcome1');
+
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {
 

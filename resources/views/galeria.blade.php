@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="main main-raised" style="background-image: url('img/Empresa/Portada.jpg');">
+<div class="main main-raised" style="background-color: white;">
     <div class="container">
         <div class="section text-center section-landing" style="padding: 26px 0;">
             <div class="row">

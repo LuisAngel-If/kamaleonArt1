@@ -5,7 +5,7 @@
 @section('body-class', 'product-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Portada.jpg') }}');">
    
 </div>
 
@@ -34,38 +34,33 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Dimensiones</label>
                             <input type="text" class="form-control" name="dimensiones" value="{{ old('dimensiones') }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Estilo</label>
                             <input type="text" class="form-control" name="estilo" value="{{ old('estilo') }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Precio</label>
                             <input type="number" step="0.01" class="form-control" name="precio" value="{{ old('precio') }}">
                         </div>
                     </div>
+                
 
-                    <div class="col-sm-12">
-                        <div class="form-group label-floating">
-                            <label class="control-label">Descripción</label>
-                            <input type="text" class="form-control" name="descripcion" value="{{ old('descripcion') }}">
-                        </div>
-                    </div>
+                    
                     <!-- <input class="datepicker form-control" type="text" value="03/12/2020"/> -->
 
                   
-                    <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen') }}">
-                  
+            
                     <!-- <div class="col-md-3">
                         <div class="form-group label-floating">
                         <input type="file" name="imagen" class="form-control-file" id="validatedCustomFile" required>
@@ -75,6 +70,7 @@
                          </div>
                     </div> -->
                     <div class="col-sm-3">
+                    
                         <div class="form-group label-floating">
                             <label class="control-label">Fecha</label>
                             <input type="date" class="form-control" name="fecha" value="{{ old('fecha') }}">
@@ -83,11 +79,11 @@
 
                    
                     
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Técnica</label>
                             <select class="form-control" name="technique_id">
-                                <option value="">Seleccionar...</option>
+                                <option value="0">Seleccionar...</option>
                                 @foreach ($techniques as $technique)
                                 <option value="{{ $technique->id }}">{{ $technique->name }}</option>
                                 @endforeach
@@ -95,11 +91,11 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Tipos</label>
                             <select class="form-control" name="type_id">
-                                <option value="">Seleccionar...</option>
+                                <option value="0">Seleccionar...</option>
                                 @foreach ($types as $type)
                                 <option value="{{ $type->id }}">{{ $type->name }}</option>
                                 @endforeach
@@ -107,11 +103,11 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Género</label>
                             <select class="form-control" name="genres_id">
-                                <option value="">Seleccionar...</option>
+                                <option value="0">Seleccionar...</option>
                                 @foreach ($genres as $genre)
                                 <option value="{{ $genre->id }}">{{ $genre->name }}</option>
                                 @endforeach
@@ -119,30 +115,27 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Artista</label>
                             <select class="form-control" name="artist_id">
-                                <option value="">Seleccionar...</option>
+                                <option value="0">Seleccionar...</option>
                                 @foreach ($artists as $artist)
                                 <option value="{{ $artist->id }}">{{ $artist->nameArt }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-
-                    <!-- <div class="col-md-3">
-                    <div class="form-group row">
-                        <label for="example-date-input" class="col-2 col-form-label"  data-date-format = "dd-mm-aaaa">Fecha</label>
-                        <div class="col-10">
-                           <input class="datepicker form-control" name="fecha" type="text"/>
-
-                        </div>
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlFile1">Imagen del producto</label>
+                        <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen') }}">
                     </div>
-                    </div> -->
                    
-
-                    <br>
+                    <div class="col-sm-11">
+                         <textarea class="form-control" placeholder="Descripción" rows="5" name="descripcion">{{ old('descripcion') }}</textarea>
+                    </div>
+                   
+                   
                     <button class="btn btn-success">Registrar</button>
                     <a href="{{ url('/admin/products') }}" class="btn btn-default">Cancelar</a>
 

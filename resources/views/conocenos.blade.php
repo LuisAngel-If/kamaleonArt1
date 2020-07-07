@@ -27,7 +27,11 @@
                     <!-- <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5> -->
                 </div>
             </div>  
-               
+            @if (session('notification'))
+                <div class="alert alert-success">
+                    {{ session('notification') }}
+                </div>
+            @endif
            
 	        <div class="container">
 	            <div class="row" id="modals">
@@ -76,25 +80,26 @@
                                 <div class="col-md-15 col-md-offset-0">
                                     <!-- <h2 class="text-center title">Work with us</h2> -->
                                     <h4 class="text-center description">Comunicate y te contactaremos lo antes posible.</h4>
-                                    <form class="contact-form">
+                                    <form class="contact-form" method="POST" action="{{ url('/contact') }}">
+                                    {{ csrf_field() }}
                                         <div class="row text-justify">
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Nombre</label>
-                                                    <input type="email" class="form-control">
+                                                    <input type="text" class="form-control" value="{{ old('name') }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Correo</label>
-                                                    <input type="email" class="form-control">
+                                                    <input type="email" class="form-control" value="{{ old('email') }}">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-group label-floating">
                                             <label class="control-label">Mensaje</label>
-                                            <textarea class="form-control" rows="4"></textarea>
+                                            <textarea class="form-control" rows="4">{{ old('descripcion') }}</textarea>
                                         </div>
 
                                         <div class="row">
@@ -109,12 +114,8 @@
                             </div>
 
                         </div>
-	                    
-
 	                </div>
-	                <br><br>
-
-		           
+	                <br><br>  
 				</div>
 			</div>
 		 

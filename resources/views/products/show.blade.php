@@ -145,16 +145,25 @@
                                     
                                 </div>
                                 <div class="text-center">
-                                    <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart"  style="background: #3d898f;">
+                                
+                                    @if (auth()->check())
+                                        <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddToCart">
                                             <i class="material-icons">add</i> Añadir al carrito de compras
                                         </button>
-                                </div>
+                                    @else
+                                        <a href="{{ url('/login?redirect_to='.url()->current()) }}" class="btn btn-primary btn-round">
+                                            <i class="material-icons">add</i> Añadir al carrito de compras
+                                        </a>
+                                    @endif
+                                </div> 
+
+                              
                             </div>
                         </div>
                     </div>
                     <!-- End Profile Tabs -->
                 </div>
-            </div>
+            
 
         </div>
     </div>

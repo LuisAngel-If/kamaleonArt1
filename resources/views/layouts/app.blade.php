@@ -6,7 +6,7 @@
 	<link rel="icon" type="image/png" href="../assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<!-- <title>@yield('tittle', 'Kamaleon Arte Decorativo')</title> -->
+	<title>@yield('tittle', config('app.name'))</title>
 	<!-- vistas hijas -->
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -41,7 +41,7 @@
 				
 			
         	<a class="navbar-brand" href="{{ url('/') }}">
-			<img src="img/Empresa/Logo_KAD_final160maxima.jpg" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy"> Kamaleon Arte Decorativo
+			<img src="img/Empresa/Logo_KAD_final160maxima.jpg" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy"> {{ config('app.name') }}
 			</a>
         	</div>
 			
@@ -49,6 +49,11 @@
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
 				@guest
+				<li class="nav-item">
+                    <a class="nav-link" href="{{ url('/tienda') }}">
+                        Tienda
+                    </a>
+				</li>
 				<li class="nav-item">
                     <a class="nav-link" href="{{ url('/galeria') }}">
                         Galería
@@ -64,9 +69,19 @@
 					Contáctanos
                     </a>
                 </li>
+				<li class="nav-item">
+							<a class="nav-link" href="{{ url('/artistas') }}">
+								Artistas
+							</a>
+						</li>
                             <li><a href="{{ route('login') }}">Ingresar</a></li>
                             <li><a href="{{ route('register') }}">Registro</a></li>
 						@else
+						<li class="nav-item">
+                    <a class="nav-link" href="{{ url('/tienda') }}">
+                        Tienda
+                    </a>
+				</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/galeria') }}">
 								Galería
@@ -80,6 +95,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/nosotros') }}">
 								Nosotros
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url('/artistas') }}">
+								Artistas
 							</a>
 						</li>
                             <li class="dropdown">
@@ -164,5 +184,5 @@
 
         <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
         <script src="{{ asset('/js/material-kit.js') }}" type="text/javascript"></script>
-
+		@yield('scripts')
     </html>
