@@ -27,16 +27,17 @@
                 <form method="POST" action="{{ url('/admin/techniques/'.$technique->id.'/edit') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-md-offset-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Nombre de la Técnica</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name', $technique->name) }}">
                         </div>
                     </div>             
                     <br>
-                    <button class="btn btn-success">Guardar cambios</button>
+                    <div class="text-center">
+                    <button class="btn btn-success"><i class="material-icons">save</i> Guardar cambios</button>
                     <a href="{{ url('/admin/techniques') }}" class="btn btn-danger"> <i class="material-icons">close</i>  Cancelar</a>
-                   
+                   </div>
                 </form>
 
         </div>    

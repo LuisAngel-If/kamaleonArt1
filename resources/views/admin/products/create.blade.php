@@ -136,8 +136,8 @@
                     </div>
                    
                    
-                    <button class="btn btn-success">Registrar</button>
-                    <a href="{{ url('/admin/products') }}" class="btn btn-default">Cancelar</a>
+                    <button class="btn btn-success"><i class="material-icons">add</i>Registrar</button>
+                    <a href="{{ url('/admin/products') }}" class="btn btn-danger"> <i class="material-icons">cancel</i>Cancelar</a>
 
                    
                 </form>

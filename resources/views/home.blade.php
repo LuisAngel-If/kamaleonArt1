@@ -21,21 +21,15 @@
                     {{ session('notification') }}
                 </div>
             @endif
-            <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                <li class="active">
+           
                     <a href="#dashboard" role="tab" data-toggle="tab">
-                        <i class="material-icons">dashboard</i>
+                        <i class="material-icons">shopping_cart</i>
                         Carrito de compras
                     </a>
-                </li>
-                <li>
-                    <a href="#tasks" role="tab" data-toggle="tab">
-                        <i class="material-icons">list</i>
-                        Pedidos realizados
-                    </a>
-                </li>
-            </ul>
-    		
+                
+              
+                 
+           
             <hr>
             <p>Tu carrito de compras presenta {{ auth()->user()->cart->details->count() }} productos agregados</p>
             <table class="table">

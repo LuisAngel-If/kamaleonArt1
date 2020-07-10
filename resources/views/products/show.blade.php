@@ -17,6 +17,23 @@
             background:url("/img") center no-repeat;
             background-size:cover;
             }
+        .profile-page .gallery .profile-tabs{
+           padding-bottom: 0px;
+       
+        }
+
+        .profile-page .profile-tabs{
+      
+           margin-top: 0px
+        }
+
+        h2.title{
+            margin-bottom: 0px;
+        }
+
+
+
+
     </style>
 @endsection
 
@@ -32,9 +49,7 @@
                     <div class="avatar">
                         <img src="../img/{{ $product->imagen }}" alt="Thumbnail Image" class="img-rounded img-responsive-center">
                     </div>
-                    <div class="name">
-                        <h3 class="title">{{ $product->name }}</h3>
-                    </div>
+                    <h2 class="title"> {{ $product->name }} - {{ $product->artist ? $product->artist->nameArt: 'General' }}</h2>
                     @if (session('notification'))
                         <div class="alert alert-success">
                             {{ session('notification') }}
@@ -44,90 +59,64 @@
             </div>
         </div>
         
-        <!-- <div class="container">
-	            <div class="title">
-	                <h2>Javascript components</h2>
-	            </div>
 
-	            <div class="row" id="modals">
-	                <div class="col-md-6">
-	                    <div class="title">
-	                        <h3>Modal</h3>
-	                    </div>
-
-	                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-	                      Launch demo modal
-	                    </button>
-	                </div>
-	                <div class="col-md-6">
-						<div class="title">
-	                        <h3>Popovers</h3>
-	                    </div>
-
-	                    <button type="button" class="btn btn-default" data-toggle="popover" data-placement="left" title="" data-content="Here will be some very useful information about his popover.<br> Here will be some very useful information about his popover." data-container="body" data-original-title="Popover on left">On left</button>
-
-						<button type="button" class="btn btn-default" data-toggle="popover" data-placement="top" title="" data-content="Here will be some very useful information about his popover." data-container="body" data-original-title="Popover on top">On top</button>
-
-						<button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="" data-content="Here will be some very useful information about his popover." data-container="body" data-original-title="Popover on bottom">On bottom</button>
-
-	                    <button type="button" class="btn btn-default" data-toggle="popover" data-placement="right" title="" data-content="Here will be some very useful information about his popover." data-container="body" data-original-title="Popover on right">On right</button>
-
-	                </div>
-	                <br><br>
-
-		            <div class="col-md-6">
-		                <div class="title">
-		                    <h3>Datepicker</h3>
-		                </div>
-		                <div class="row">
-		                    <div class="col-md-6">
-								<div class="form-group label-static">
-									<label class="control-label">Datepicker</label>
-									<input type="text" class="datepicker form-control" value="03/12/2016">
-								<span class="material-input"></span></div>
-
-		                    </div>
-		                </div>
-		            </div>
-
-		            <div class="col-md-6">
-						<div class="title">
-							<h3>Tooltips</h3>
-						</div>
-
-						<button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="left" title="" data-container="body" data-original-title="Tooltip on left">On left</button>
-
-						<button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="top" title="" data-container="body" data-original-title="Tooltip on top">On top</button>
-
-						<button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-container="body" data-original-title="Tooltip on bottom">On bottom</button>
-
-						<button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="right" title="" data-container="body" data-original-title="Tooltip on right">On right</button>
-
-		                <div class="clearfix"></div><br><br>
-		            </div>
-
-					<div class="title">
-		                <h3>Carousel</h3>
-		            </div>
-				</div>
-			</div> -->
-		
-            <div class="row">
+      
                 <div class="col-md-6 col-md-offset-3">
+                    <div class="profile-tabs">
+                        <div class="nav-align-center">
+                            <div class="tab-content gallery">
+                                <div class="tab-pane active" id="studio">
+                                    <div class="row" style="margin-left: -150px; margin-right: -150px;">  
+                                                 
+                                            <img src="../img/{{ $product->imagen }}" class="img-rounded" style="width: 100%;">
+                                        
+                                    </div>
+                                    <h2 class="title"> Información de la obra</h2>
+                                </div>
+                            </div>
+                        </div>
+                 
+                </div>
+            </div>
+        <!-- <div class="team">
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    
+                    
+                    <th scope="col">Last</th> 
+                    <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    
+                    
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                    <tr>
+                    
+                    
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        </div> -->
+       
+
                     <div class="profile-tabs">
                         <div class="nav-align-center">
                           
 
                             <div class="tab-content gallery">
                                 <div class="tab-pane active" id="studio">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="../img/{{ $product->imagen }}" class="img-rounded" />
-                                        </div>
-                                        <div class="card col-sm-4">
-                                        <div class="description text-center" style="color:#000;">
-                                            <p> Descripción: {{ $product->descripcion }} </p>
-                                        </div>
+                                 
+                                        
                                         <div class="description text-center" style="color:#000;">
                                             <p> Artista: {{ $product->artist ? $product->artist->nameArt: 'General' }} </p>
                                         </div>
@@ -135,12 +124,15 @@
                                             <p> Técnica: {{ $product->technique ? $product->technique->name: 'General' }} </p>
                                         </div>
                                         <div class="description text-center" style="color:#000;">
-                                            <p> Género: {{ $product->genre ? $product->genre->name: 'General' }} </p>
+                                            <p> Género: {{ $product->genre ? $product->genre->id: 'General' }} </p>
                                         </div>
                                         <div class="description text-center" style="color:#000;">
-                                            <p> Tipo de Obra: {{ $product->Type ? $product->Type->name: 'General' }} </p>
+                                            <p> Tipo de Obra: {{ $product->type ? $product->type->name: 'General' }} </p>
                                         </div>
+                                        <div class="description text-center" style="color:#000;">
+                                            <p> Descripción: {{ $product->descripcion }} </p>
                                         </div>
+                                       
                                     </div>
                                     
                                 </div>
@@ -162,11 +154,11 @@
                         </div>
                     </div>
                     <!-- End Profile Tabs -->
-                </div>
-            
+              
+            <br>
 
-        </div>
-    </div>
+    
+                 
 </div>
 
     

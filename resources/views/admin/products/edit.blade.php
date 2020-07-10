@@ -34,45 +34,26 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Dimensiones</label>
                             <input type="text" class="form-control" name="dimensiones" value="{{ old('dimensiones', $product->dimensiones) }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Estilo</label>
                             <input type="text" class="form-control" name="estilo" value="{{ old('estilo', $product->estilo) }}">
                         </div>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Precio</label>
                             <input type="number" step="0.01" class="form-control" name="precio" value="{{ old('precio', $product->precio) }}">
                         </div>
                     </div>
-
-                    <div class="col-sm-12">
-                        <div class="form-group label-floating">
-                            <label class="control-label">Descripción</label>
-                            <input type="text" class="form-control" name="descripcion" value="{{ old('descripcion', $product->descripcion) }}">
-                        </div>
-                    </div>
-                    <!-- <input class="datepicker form-control" type="text" value="03/12/2020"/> -->
-
-                   
-                    <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen', $product->imagen) }}">
-                    <!-- <div class="col-md-3">
-                        <div class="form-group label-floating">
-                        <input type="file" name="imagen" class="form-control-file" id="validatedCustomFile" required>
-                          <button type="submit" class="btn btn-info">Seleccionar una imagen..</button>
-                            
-                            
-                         </div>
-                    </div> -->
                     <div class="col-sm-3">
                         <div class="form-group label-floating">
                             <label class="control-label">Fecha</label>
@@ -80,7 +61,9 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+               
+
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Técnica</label>
                             <select class="form-control" name="technique_id">
@@ -92,7 +75,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Tipos</label>
                             <select class="form-control" name="type_id">
@@ -104,7 +87,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Género</label>
                             <select class="form-control" name="genres_id">
@@ -116,7 +99,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Artista</label>
                             <select class="form-control" name="artist_id">
@@ -127,8 +110,20 @@
                             </select>
                         </div>
                     </div>
+                
+                    <!-- <input class="datepicker form-control" type="text" value="03/12/2020"/> -->
 
-
+                 
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlFile1">Imagen del producto</label>
+                        <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen', $product->imagen) }}">
+                     </div>
+                     <div class="col-sm-11">
+                        
+                            
+                        <textarea type="text" placeholder="Descripción" rows="5" class="form-control" name="descripcion">{{ old('descripcion', $product->descripcion) }}</textarea>
+                  
+                </div>
                     <!-- <div class="col-md-3">
                     <div class="form-group row">
                         <label for="example-date-input" class="col-2 col-form-label"  data-date-format = "dd-mm-aaaa">Fecha</label>
@@ -141,7 +136,7 @@
                    
 
                     <br>
-                    <button class="btn btn-success">Guardar cambios</button>
+                    <button class="btn btn-success"><i class="material-icons">save</i>Guardar cambios</button>
                     <a href="{{ url('/admin/products') }}" class="btn btn-danger"> <i class="material-icons">close</i>  Cancelar</a>
                    
                 </form>

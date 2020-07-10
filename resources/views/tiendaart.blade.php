@@ -94,12 +94,16 @@
                     <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-
+                  
+                    
                             <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Artistas
                             <i class="material-icons">keyboard_arrow_down</i>
                             </a>
-                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" style="">
+                     
+                    
+             
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" style="">
                             @foreach($artistas as $artista)
                             <div class="card-body">
                     
@@ -117,7 +121,6 @@
                        
                         </div>
                         @endforeach
-                   
               
                     <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
@@ -158,11 +161,10 @@
                     @endforeach
                 </div>
                 <div class="text-center">
-                    {{ $products->links() }}
+                  
                 </div>
             </div>    
-        </div>
-         
+    </div>
     
 
 </div>

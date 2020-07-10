@@ -23,25 +23,25 @@
                         </ul>
                     </div>
                 @endif
-
-                <form method="POST" action="{{ url('/admin/types') }}" enctype="multipart/form-data">
+                
+                <form class="form-horizontal" method="POST" action="{{ url('/admin/types') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
+                 
 
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-md-offset-3">
                         <div class="form-group label-floating">
-                            <label class="control-label">Nombre del Tipo de Obra</label>
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <label class="control-label">Nombre del Tipo de Obra </label>
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}"> 
                         </div>
                     </div>
-
-                   
-
                     <br>
-                    <button class="btn btn-success">Registrar</button>
-                    <a href="{{ url('/admin/types') }}" class="btn btn-default">Cancelar</a>
-
-                   
+                    <div class="text-center">
+                    <button class="btn btn-success"><i class="material-icons">add</i> Registrar</button>
+                    <a href="{{ url('/admin/types') }}" class="btn btn-danger"><i class="material-icons">cancel</i> Cancelar</a>
+                    </div> 
+                 
                 </form>
+                
 
         </div>    
     </div>

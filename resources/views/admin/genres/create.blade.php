@@ -27,7 +27,7 @@
                 <form method="POST" action="{{ url('/admin/genres') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                    <div class="col-sm-3">
+                    <div class="col-md-3 col-md-offset-3">
                         <div class="form-group label-floating">
                             <label class="control-label">Nombre del Género</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -37,9 +37,10 @@
                    
 
                     <br>
-                    <button class="btn btn-success">Registrar</button>
-                    <a href="{{ url('/admin/genres') }}" class="btn btn-default">Cancelar</a>
-
+                    <div class="text-center">
+                    <button class="btn btn-success"><i class="material-icons">add</i> Registrar</button>
+                    <a href="{{ url('/admin/genres') }}" class="btn btn-danger"><i class="material-icons">cancel</i> Cancelar</a>
+                    </div>
                    
                 </form>
 

@@ -51,12 +51,12 @@
 				@guest
 				<li class="nav-item">
                     <a class="nav-link" href="{{ url('/tienda') }}">
-                        Tienda
+					<i class="material-icons">store</i>Tienda
                     </a>
 				</li>
 				<li class="nav-item">
                     <a class="nav-link" href="{{ url('/galeria') }}">
-                        Galería
+					Galería
                     </a>
 				</li>
 				<li class="nav-item">
@@ -78,10 +78,10 @@
                             <li><a href="{{ route('register') }}">Registro</a></li>
 						@else
 						<li class="nav-item">
-                    <a class="nav-link" href="{{ url('/tienda') }}">
-                        Tienda
-                    </a>
-				</li>
+							<a class="nav-link" href="{{ url('/tienda') }}">
+							<i class="material-icons">store</i> Tienda
+							</a>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/galeria') }}">
 								Galería

@@ -48,7 +48,14 @@ Route::get('/galeria', function () {
     return view('/galeria');
 });
 
+Route::get('/pedidos', function () {
+    return view('/pedidos');
+});
+
 Route::get('/tienda', 'TestController@welcome');
+Route::get('/tiendaart', 'TestController@listarArt1');
+// Route::get('/tiendaart', 'TestController@listarArt');
+
 Route::get('/artistas', 'TestController@welcome1');
 
 
