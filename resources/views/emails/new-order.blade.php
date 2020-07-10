@@ -50,9 +50,9 @@
 		<strong>Importe que el cliente debe pagar:</strong> {{ $cart->total }}
 	</p>
 	<hr>
-	<p>
+	<!-- <p>
 		<a href="{{ url('/admin/orders/'.$cart->id) }}">Haz clic aquí</a>
 		para ver más información sobre este pedido.
-	</p>
+	</p> -->
 </body>
 </html>
