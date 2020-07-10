@@ -140,7 +140,7 @@
     </div>
 
 
-    <div class="section landing-section">
+    <!-- <div class="section landing-section">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="text-center title">¿Aún no te has registrado?</h2>
@@ -177,7 +177,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
      
             <br>
 		
