@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\CartDetail;
+use App\Cart;
+use App\Product;
 
 class CartDetailController extends Controller
 {
@@ -25,6 +27,7 @@ class CartDetailController extends Controller
     	return back()->with(compact('notification'));
     }
 
+
     public function destroy(Request $request)
     {
     	$cartDetail = CartDetail::find($request->cart_detail_id);
@@ -37,4 +40,10 @@ class CartDetailController extends Controller
     	// $notification = 'El producto se ha eliminado del carrito de compras correctamente.';
     	// return back()->with(compact('notification'));
     }
+
+    public function getProduct(){
+        #Un producto puede aparecer en muchos carritos de compras
+        return $this->belongsTo(Product::class);
+    }
+
 }

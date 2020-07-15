@@ -19,23 +19,12 @@ Auth::routes();
 
 Route::get('/search', 'SearchController@show');
 Route::get('/products/json', 'SearchController@data');
-
 Route::get('/products/{id}', 'ProductController@show'); //mostrar
-
-
-
-// Route::get('/', 'TestController@welcome');
-
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/products/{id}', 'ProductController@show'); //mostrar
 Route::get('/artists/{id}', 'ProductController@showArt'); //mostrar
 Route::get('/techniques/{techniques}', 'TechniqueController@show'); //mostrar
-
-Route::post('/cart', 'CartDetailController@store');
-Route::delete('/cart', 'CartDetailController@destroy');
-
-Route::post('/order', 'CartController@update');
-
 Route::get('/nosotros', function () {
     return view('/nosotros');
 });
@@ -48,15 +37,33 @@ Route::get('/galeria', function () {
     return view('/galeria');
 });
 
-Route::get('/pedidos', function () {
-    return view('/pedidos');
-});
-
 Route::get('/tienda', 'TestController@welcome');
 Route::get('/tiendaart', 'TestController@listarArt1');
 // Route::get('/tiendaart', 'TestController@listarArt');
 
 Route::get('/artistas', 'TestController@welcome1');
+
+// Route::get('/prueba', 'CartDetailController@listarPedidos');
+
+
+#Ruta para agregar un elemento al carrito
+Route::post('/cart','CartDetailController@store');
+#Ruta para eliminar un elemento al carrito
+Route::delete('/cart','CartDetailController@destroy');
+# Ruta para convertir el carrito en un pedido
+Route::post('/order','CartController@update');
+#Ruta para eliminar un pedido
+Route::delete('/order','CartController@destroy');
+#Ruta para cambiar el status de un pedido
+Route::post('/order/status','CartController@updateStatus');
+#Ruta para enviar un mensage de consulta al admin
+Route::post('/message/new','MessageController@store');
+
+//Ruta para procesar el pago
+Route::post('paypal/pay', 'PaymentController@payWithpaypal');
+// Ruta para verificar el estado del pago
+Route::get('/paypal/status', 'PaymentController@getPaymentStatus');
+
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {

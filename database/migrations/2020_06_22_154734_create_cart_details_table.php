@@ -16,14 +16,14 @@ class CreateCartDetailsTable extends Migration
         Schema::create('cart_details', function (Blueprint $table) {
             $table->increments('id');
             //fk
-            $table->integer('cart_id')->unsigned();
+            $table->integer('cart_id')->unsigned();//detalles asociado del carro de compras
             $table->foreign('cart_id')->references('id')->on('carts');
 
-            $table->integer('product_id')->unsigned();
+            $table->integer('product_id')->unsigned();//el producto a comprar
             $table->foreign('product_id')->references('id')->on('products');
 
             $table->integer('quantity');
-            $table->integer('discount')->default(0);//%
+            $table->integer('discount')->default(0);//% int
             $table->timestamps();
         });
     }
