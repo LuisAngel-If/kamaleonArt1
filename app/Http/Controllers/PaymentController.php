@@ -43,8 +43,9 @@ class PaymentController extends Controller
         $payer->setPaymentMethod('paypal');
 
         $amount = new Amount();
-        $amount->setTotal('3.99');
-        $amount->setCurrency('USD');
+           $amount->setCurrency('MXN')
+            ->setTotal($request->get('total'));
+        
 
         $transaction = new Transaction();
         $transaction->setAmount($amount);
@@ -83,12 +84,20 @@ class PaymentController extends Controller
             return redirect('/paypal/failed')->with(compact('status'));
         }
 
-        $payment = Payment::get($paymentId, $this->apiContext);
+        $payment = Payment::get($paymentId, $this->_api_context);
         $execution = new PaymentExecution();
         $execution->setPayerId($payerId);
-        $result = $payment->execute($execution, $this->apiContext);
+        $result = $payment->execute($execution, $this->_api_context);
 
-        dd($result);
+        //dd($result);
+
+        if ($result->getState() === 'approved') {
+            $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente.';
+            return redirect('/results')->with(compact('status'));
+        }
+
+        $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
+        return redirect('/results')->with(compact('status'));
     }
     
        

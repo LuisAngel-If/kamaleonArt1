@@ -81,7 +81,7 @@
 <div class="main main-raised">
     <div class="col-md-2">
         <div class="card">
-            <div class="sidebar-heading" ><h5 style="color: #fab927;">Categorias<h5></div>
+            <!-- <div class="sidebar-heading" ><h5 style="color: #fab927;">Categorias<h5></div>
                 <div class="list-group list-group-flush">
                     <a href="{{ url('/catalago') }}" class="list-group-item list-group-item-action bg-light"> <img src="img/todo.png" width="20" height="20" alt=""> Todos</a>
                     <a href="{{ url('/catalago/modelados') }}" class="list-group-item list-group-item-action bg-light"><img src="img/modelado.png" width="20" height="20" alt="">Modelados</a>
@@ -123,7 +123,7 @@
                     <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light"></a>
                 </div>
-            </div>
+            </div> -->
         </div>
         </div>
    

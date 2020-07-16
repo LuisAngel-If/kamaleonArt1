@@ -6,6 +6,18 @@
 @include("dashboard.cart")
 @include("dashboard.order")
 
+@section('styles')
+    <style>
+        // Class
+            .invisible {
+            visibility: hidden;
+            }
+
+
+         
+    </style>
+@endsection
+
 @section('content')
 <div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">
    
@@ -71,15 +83,18 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                        <?php $total = 0 ?> 
                         <!-- recorriendo cada item del carrito -->
                         @foreach(auth()->user()->cart->details as $detail)
-                        
+                        <?php $total += $detail->product['precio'] * $detail['cantidad'] ?>
                         <tr>
                             <td class=""><img src="{{ $detail->product->featured_image_url }}" alt="thumb" height="50"></td>
                             <td> <a href="{{ url('/products/'.$detail->product->id) }}"></a>{{ $detail->product->name }}</td>
                             <td class="td-actions ">&dollar; {{ $detail->product->precio }} </td>
                             <td> {{ $detail->quantity }}</td>
                             <td> &dollar;{{ $detail->quantity* $detail->product->precio }}</td>
+                            
                             <td class="td-actions col-md-4">
                                 <!--/cart va hacia CartController-->
                                 <form method="POST" action="{{ url('/cart') }}">
@@ -97,22 +112,22 @@
                                 </form>
                             </td>
                         </tr>
+                        <div class="invisible">{{ $total += $detail->quantity* $detail->product->precio }}</div>
                         @endforeach
-                        </tbody>
-                    </table>
 
-                    <div class="text-center">
-                        <form method="post" action="{{ url('/order') }}">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-success btn-round">
-                                <i class="material-icons">done</i>Realizar Pedido
-                            </button>
-                        </form>
-                    </div>
+                        
+                        </tbody>
+                        
+                    </table>
+                    <p><strong>Importe a pagar:</strong> {{ $total }}</p>
+                    
+                    <div class="invisible">Aqui no esta.</div>
+
+           
 
                     <form class="pago" method="POST" id="payment-form" action="{!! URL::to('paypal/pay') !!}">            
                         {{ csrf_field() }}
-                       
+                        <input  type="hidden" id="total" type="text" name="total" value="{{$total}}">
                         <div class="paypal">
                             <div class="row justify-content-end">                
                                 <button class="btn btn-success">Comprar</button>

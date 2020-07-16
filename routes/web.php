@@ -37,6 +37,10 @@ Route::get('/galeria', function () {
     return view('/galeria');
 });
 
+Route::get('/results', function () {
+    return view('/results');
+});
+
 Route::get('/tienda', 'TestController@welcome');
 Route::get('/tiendaart', 'TestController@listarArt1');
 // Route::get('/tiendaart', 'TestController@listarArt');
