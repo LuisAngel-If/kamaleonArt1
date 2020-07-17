@@ -109,7 +109,7 @@
 
                                 <ul class="dropdown-menu">
 									<li>
-										<a href="{{ url('/home') }}">Carrito de Compras</a>
+										<a href="{{ url('/home') }}">Tablero</a>
 									</li>
 								@if (auth()->user()->admin)
 									<li>

@@ -71,7 +71,8 @@ Route::post('paypal/pay', 'PaymentController@payWithpaypal');
 // Ruta para verificar el estado del pago
 Route::get('/paypal/status', 'PaymentController@getPaymentStatus');
 
-
+Route::get('/home', 'MensajeController@index');//listar
+Route::delete('/home/{id}', 'MensajeController@destroy'); //eliminar
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {
 

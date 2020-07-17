@@ -3,8 +3,7 @@
 @section('tittle', 'Kamaleon Arte Decorativo| Dashboard')
 
 @section('body-class', 'product-page')
-@include("dashboard.cart")
-@include("dashboard.order")
+
 
 @section('styles')
     <style>
@@ -74,7 +73,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Ref</th>
+                                <th>Foto</th>
                                 <th class="col-md-4 ">Nombre</th>
                                 <th class="col-md-2 ">Precio</th>
                                 <th class="col-md-2 ">Cantidad</th>
@@ -89,7 +88,7 @@
                         @foreach(auth()->user()->cart->details as $detail)
                         <?php $total += $detail->product['precio'] * $detail['cantidad'] ?>
                         <tr>
-                            <td class=""><img src="{{ $detail->product->featured_image_url }}" alt="thumb" height="50"></td>
+                            <td class=""><img src="img/{{ $detail->product->imagen }}" height="50"></td>
                             <td> <a href="{{ url('/products/'.$detail->product->id) }}"></a>{{ $detail->product->name }}</td>
                             <td class="td-actions ">&dollar; {{ $detail->product->precio }} </td>
                             <td> {{ $detail->quantity }}</td>
@@ -102,13 +101,21 @@
                                     {{ method_field('DELETE') }}
 
                                     <input type="hidden" name="cart_detail_id" value="{{ $detail->id }}">
-                                    <a href="{{ url('products/'.$detail->product->id) }}" target="_blank" rel="tooltip" title="Ver producto" class="btn btn-info btn-fab btn-fab-mini btn-round">
+                                    <!-- <a href="{{ url('products/'.$detail->product->id) }}" target="_blank" rel="tooltip" title="Ver producto" class="btn btn-info btn-fab btn-fab-mini btn-round">
                                         <i class="material-icons">info</i>
                                     </a>
                                     
                                     <button type="submit" rel="tooltip" title="Quitar del carrito" class="btn btn-danger btn-fab btn-fab-mini btn-round">
                                         <i class="fa fa-times"></i>
+                                    </button> -->
+                                    <a href="{{ url('/products/'.$detail->product->id) }}" target="_blank" type="button" rel="tooltip" title="Ver Producto" class="btn btn-info btn-simple btn-xs">
+                                        <i class="fa fa-info"></i>
+                                    </a>
+                                
+                                    <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
+                                        <i class="fa fa-times"></i>
                                     </button>
+                                    
                                 </form>
                             </td>
                         </tr>
@@ -200,6 +207,56 @@
                 </div>
                 @endif
             </div> -->
+
+            @if(auth()->user()->admin)
+                <div class="tab-pane" id="messages">   
+                
+
+                    <div class="team">
+                <div class="row">
+           
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th class="text-center">Nombre</th>
+                            <th class="text-center">Correo</th>
+                            <th class="col-md-4 text-center">Mensaje</th>
+                            <th class="text-right">Acciones</th>
+                        </tr>
+                    </thead>
+                    @foreach($mensajes as $mensaje)
+                    <tbody>
+                        <tr>
+                         
+                        <td class="text-center">{{ $mensaje->name }}</td>
+                           
+                        <td class="text-center"> {{ $mensaje->email }} </td>
+                        <td class="text-justify"> {{ $mensaje->descripcion }} </td>
+                          
+                            <td class="td-actions text-right">
+                               
+                            <form method="post" action="{{ url('/home/'.$mensaje->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                
+                           
+                                <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </form>  
+                             
+                            </td>
+                        </tr>
+              
+                    </tbody>
+                    @endforeach
+                </table>
+              
+                </div>
+            </div>
+
+                </div>
+            @endif
 
             </div>
         </div>
