@@ -8,30 +8,31 @@ use App\Mensaje;
 class MensajeController extends Controller
 {
     //
-    public function create(){
-        $mensajes = Mensaje::orderBy('name')->get();
-        return view('mensaje')->with(compact('mensajes'));
-    }
+  public function store(Request $request){
 
-    public function store(Request $request){
-     
-
-        // $file = $request->file('imagen');
-        // $path = public_path() . '/img/';
-        // $fileName = uniqid() . $file->getClientOriginalName();
-        // $file->move($path, $fileName);
-  
-        $mensaje = new Mensaje;
-        $mensaje->name = $request->input('name');
-        $mensaje->email = $request->input('email');
+    $messages = [
+        'name.required' => 'Es necesario ingresar tu nombre completo',
+        'name.min' => 'Es necesario ingresar más de 5 carácteres en el nombre',
+        'email.required' => 'Es necesario ingresar el correo',
+        'descripcion.required' => 'Es necesario escribir el mensaje'
+    ];
     
-        $mensaje->descripcion = $request->input('descripcion');
-        
-         
+    $rules = [
+        'name' => 'required|min:5',  
+        'email' => 'required',     
+        'descripcion' => 'required|min:2', 
+    ];
 
-        $mensaje->save();     
-       // $products = Product::all();
-       $notification = 'El Mensaje se ha enviado';
-        return redirect('/admin/products')->with(compact('notification'));
-    }
+    $this->Validate($request, $rules, $messages);
+
+
+    $message = new Mensaje();
+    $message->name = $request->input('name');
+    $message->email = $request->input('email');
+    $message->descripcion = $request->input('descripcion');
+    $message->save();
+
+    $notification = "Tu mensaje ha sido enviado, tan pronto nos podremos en contacto!.";
+    return back()->with(compact('notification'));
+}
 }

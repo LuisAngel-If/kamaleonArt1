@@ -45,12 +45,12 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#orders" role="tab" data-toggle="tab">
                     <i class="material-icons">schedule</i>
                     Pedidos
                 </a>
-            </li>
+            </li> -->
 
             @if(auth()->user()->admin)
             <li class="nav-item">
@@ -141,8 +141,8 @@
                 </div>
             <!--End Carrito -->
 
-            <!-- Pedidos -->
-            <div class="tab-pane" id="orders">    
+       
+            <!-- <div class="tab-pane" id="orders">    
                 @yield("content_dashboard_orders")
 
                 @if(auth()->user()->order->count() > 0)
@@ -158,7 +158,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- recorriendo cada item del pedido-->
+                    
                         @foreach(auth()->user()->order as $order)
                         <tr>
                             
@@ -199,7 +199,7 @@
                     </div>
                 </div>
                 @endif
-            </div>
+            </div> -->
 
             </div>
         </div>

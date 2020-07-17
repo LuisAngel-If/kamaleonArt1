@@ -32,6 +32,9 @@ Route::get('/nosotros', function () {
 Route::get('/conocenos', function () {
     return view('/conocenos');
 });
+
+Route::post('/mensaje/nuevo','MensajeController@store');
+
 Route::post('/contact', 'MensajeController@store');
 Route::get('/galeria', function () {
     return view('/galeria');
