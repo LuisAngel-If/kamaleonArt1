@@ -33,15 +33,6 @@
                 @endif
                 
         
-                <div class="text-center">
-                    <form href="{{ url('/home') }}"  method="post" action="{{ url('/order') }}">
-                        {{ csrf_field() }}
-                        <button type="submit" class="btn btn-success btn-round">
-                            <i class="material-icons">assignment_return</i>Continuar
-
-                        </button>
-                    </form>
-                </div>
 
 
         </div>
