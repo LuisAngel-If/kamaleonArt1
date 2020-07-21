@@ -32,6 +32,11 @@ class TestController extends Controller
     
     }
 
+    public function results()
+    {
+        return view('/results');     
+    }
+
     public function listarArt(Request $artist_id){
         $artistas =Artist::all();
         $products = Product::where('artist_id', '=', '$name')->get(); 

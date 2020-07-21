@@ -33,15 +33,14 @@
                 @endif
                 
         
-                <!-- <div class="text-center">
-                    <form href="{{ url('/home') }}"  method="post" action="{{ url('/order') }}">
+                <div class="text-center">
+                    <form method="post" action="{{ url('/order') }}">
                         {{ csrf_field() }}
                         <button type="submit" class="btn btn-success btn-round">
-                            <i class="material-icons">assignment_return</i>Continuar
-
+                            <i class="material-icons">assignment_return</i>Confirmar compra
                         </button>
                     </form>
-                </div> -->
+                </div>
 
 
         </div>

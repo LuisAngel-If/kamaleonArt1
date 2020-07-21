@@ -34,6 +34,10 @@
                     {{ session('notification') }}
                 </div>
             @endif
+
+            @if (session('status'))
+                    <h3> {{ session('status') }}  </h3>     
+                @endif
            
            
             <ul class="nav nav-pills nav-pills-icons" role="tablist">
@@ -44,12 +48,12 @@
                 </a>
             </li>
 
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="#orders" role="tab" data-toggle="tab">
                     <i class="material-icons">schedule</i>
                     Pedidos
                 </a>
-            </li> -->
+            </li>
 
             @if(auth()->user()->admin)
             <li class="nav-item">
@@ -149,7 +153,7 @@
             <!--End Carrito -->
 
        
-            <!-- <div class="tab-pane" id="orders">    
+            <div class="tab-pane" id="orders">    
                 @yield("content_dashboard_orders")
 
                 @if(auth()->user()->order->count() > 0)
@@ -206,7 +210,7 @@
                     </div>
                 </div>
                 @endif
-            </div> -->
+            </div>
 
             @if(auth()->user()->admin)
                 <div class="tab-pane" id="messages">   

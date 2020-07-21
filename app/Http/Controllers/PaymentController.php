@@ -52,9 +52,12 @@ class PaymentController extends Controller
         // $transaction->setDescription('See your IQ results');
 
         $callbackUrl = url('/paypal/status');
+        $callbackUr2 = url('/order');
+        // $callbackUr2 = url('/order');
+        
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl($callbackUrl)
+        $redirectUrls->setReturnUrl($callbackUrl, $callbackUr2)
             ->setCancelUrl($callbackUrl);
 
         $payment = new Payment();
@@ -81,7 +84,7 @@ class PaymentController extends Controller
 
         if (!$paymentId || !$payerId || !$token) {
             $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
-            return redirect('/paypal/failed')->with(compact('status'));
+            return redirect('/home')->with(compact('status'));
         }
 
         $payment = Payment::get($paymentId, $this->_api_context);
@@ -92,7 +95,7 @@ class PaymentController extends Controller
         //dd($result);
 
         if ($result->getState() === 'approved') {
-            $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente.';
+            $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente. Por favor este atento a tu correo electrónico.';
             return redirect('/results')->with(compact('status'));
         }
 

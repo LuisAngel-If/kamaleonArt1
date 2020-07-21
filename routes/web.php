@@ -40,9 +40,7 @@ Route::get('/galeria', function () {
     return view('/galeria');
 });
 
-Route::get('/results', function () {
-    return view('/results');
-});
+Route::get('/results', 'TestController@welcome');
 
 Route::get('/tienda', 'TestController@welcome');
 Route::get('/tiendaart', 'TestController@listarArt1');
@@ -60,7 +58,7 @@ Route::delete('/cart','CartDetailController@destroy');
 # Ruta para convertir el carrito en un pedido
 Route::post('/order','CartController@update');
 #Ruta para eliminar un pedido
-Route::delete('/order','CartController@destroy');
+
 #Ruta para cambiar el status de un pedido
 Route::post('/order/status','CartController@updateStatus');
 #Ruta para enviar un mensage de consulta al admin
