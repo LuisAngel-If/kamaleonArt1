@@ -123,14 +123,17 @@
                                         <div class="description text-center" style="color:#000;">
                                             <p> Técnica: {{ $product->technique ? $product->technique->name: 'General' }} </p>
                                         </div>
-                                        <div class="description text-center" style="color:#000;">
+                                        <!-- <div class="description text-center" style="color:#000;">
                                             <p> Género: {{ $product->genre ? $product->genre->id: 'General' }} </p>
-                                        </div>
+                                        </div> -->
                                         <div class="description text-center" style="color:#000;">
                                             <p> Tipo de Obra: {{ $product->type ? $product->type->name: 'General' }} </p>
                                         </div>
                                         <div class="description text-center" style="color:#000;">
                                             <p> Descripción: {{ $product->descripcion }} </p>
+                                        </div>
+                                        <div class="description text-center" style="color:#000;">
+                                            <p> Precio en MXN: {{ $product->precio }}  </p>
                                         </div>
                                        
                                     </div>

@@ -148,7 +148,10 @@
                             <h4 class="title"> <a href="{{ url('/products/'.$product->id) }}"> {{ $product->name }} </a><br>
                                 <small class="text-muted"> {{ $product->artist ? $product->artist->nameArt: 'General' }} </small>
                             </h4>
-                            <p class="description"> {{ $product->descripcion }} </p>
+                            <h4 class="title">
+                                <small class="text-muted"> ${{ $product->precio }} </small>
+                            </h4>
+                     
                             <!-- <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
                             <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
                             <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a> -->

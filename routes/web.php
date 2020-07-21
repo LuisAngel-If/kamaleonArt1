@@ -40,7 +40,7 @@ Route::get('/galeria', function () {
     return view('/galeria');
 });
 
-Route::get('/results', 'TestController@results');
+Route::get('/paypal/results', 'TestController@results');
 
 Route::get('/tienda', 'TestController@welcome');
 Route::get('/tiendaart', 'TestController@listarArt1');
