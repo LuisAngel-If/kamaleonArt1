@@ -48,12 +48,12 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#orders" role="tab" data-toggle="tab">
                     <i class="material-icons">schedule</i>
                     Pedidos
                 </a>
-            </li>
+            </li> -->
 
             @if(auth()->user()->admin)
             <li class="nav-item">

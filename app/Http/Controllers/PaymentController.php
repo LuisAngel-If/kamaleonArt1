@@ -57,7 +57,7 @@ class PaymentController extends Controller
         
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl($callbackUrl, $callbackUr2)
+        $redirectUrls->setReturnUrl($callbackUrl)
             ->setCancelUrl($callbackUrl);
 
         $payment = new Payment();
@@ -100,7 +100,7 @@ class PaymentController extends Controller
         }
 
         $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
-        return redirect('/results')->with(compact('status'));
+        return redirect('/home')->with(compact('status'));
     }
     
        
