@@ -6,7 +6,7 @@
 
 
 @section('content')
-<div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">>
+<div class="header header-filter" style="background-image: url('../img/Empresa/Portada.jpg');">>
 <div class="container">
 				<div class="row">
 	

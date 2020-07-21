@@ -34,7 +34,7 @@ class TestController extends Controller
 
     public function results()
     {
-        return view('/  paypal/results');     
+        return view('/paypal/results');     
     }
 
     public function listarArt(Request $artist_id){
