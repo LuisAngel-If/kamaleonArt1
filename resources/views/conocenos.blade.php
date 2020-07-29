@@ -6,7 +6,7 @@
 
 
 @section('content')
-<div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">
+<div class="header header-filter" style="background-image: url('img/Empresa/Imagen5.jpg');">
     <div class="container">
         <div class="row">
            
@@ -65,14 +65,14 @@
                                     </div> 
                                     <br>
                                     <div class="title">
-                                        <h3 class="text-justify">kamaleonArt@gmail.com  <div class="col-md-2" style="text-align:right"><span class="fa-stack fa-1x">
+                                        <h3 class="text-justify">kamaleon.artd@gmail.com  <div class="col-md-2" style="text-align:right"><span class="fa-stack fa-1x">
                                         <em class="fa fa-circle fa-stack-2x" style="color: #3d898f"></em>
                                         <em class="fa fa-stack-1x fa-envelope" style="color: #fff"></em>
                                     </span></div></h3> 
                                     </div> 
                                     <br>
                                     <div class="title">
-                                        <h3 class="text-justify">+ 271-000-00-00<div class="col-md-2" style="text-align:right"><span class="fa-stack fa-1x">
+                                        <h3 class="text-justify">+ 271-700-8510 <div class="col-md-2" style="text-align:right"><span class="fa-stack fa-1x">
                                         <em class="fa fa-circle fa-stack-2x" style="color: #3d898f"></em>
                                         <em class="fa fa-stack-1x fa-phone" style="color: #fff"></em>
                                     </span></div></h3>

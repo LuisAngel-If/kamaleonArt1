@@ -5,7 +5,7 @@
 @section('body-class', 'product-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Portada.jpg') }}');">
+<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Imagen11.jpg') }}');">
    
 </div>
 
@@ -90,10 +90,10 @@
                     <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Género</label>
-                            <select class="form-control" name="genres_id">
+                            <select class="form-control" name="genre_id">
                                 <option value="">Seleccionar..</option>
                                 @foreach ($genres as $genre)
-                                <option value="{{ $genre->id }}" @if($genre->id == old('genres_id', $product->genres_id)) selected @endif>{{ $genre->name }}</option>
+                                <option value="{{ $genre->id }}" @if($genre->id == old('genre_id', $product->genre_id)) selected @endif>{{ $genre->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -118,12 +118,9 @@
                         <label for="exampleFormControlFile1">Imagen del producto</label>
                         <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen', $product->imagen) }}">
                      </div>
-                     <div class="col-sm-11">
-                        
-                            
+                     <div class="col-sm-11">      
                         <textarea type="text" placeholder="Descripción" rows="5" class="form-control" name="descripcion">{{ old('descripcion', $product->descripcion) }}</textarea>
-                  
-                </div>
+                     </div>
                     <!-- <div class="col-md-3">
                     <div class="form-group row">
                         <label for="example-date-input" class="col-2 col-form-label"  data-date-format = "dd-mm-aaaa">Fecha</label>

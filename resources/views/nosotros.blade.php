@@ -6,7 +6,7 @@
 
 
 @section('content')
-<div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">>
+<div class="header header-filter" style="background-image: url('img/Empresa/Imagen3.jpg');">>
 <div class="container">
 				<div class="row">
 					<!-- <div class="col-md-8 col-md-offset-2">
@@ -115,7 +115,7 @@
                             <div class="row">
                                 <div class="col-md-15 col-md-offset-1">
                                     
-                                    <h5 class="description text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+                                    <h5 class="description text-justify">Kamaleon Arte Decorativo es una empresa fundada en la región de Córdoba, donde puedes encontrar lo necesario para aprender técnicas en tus obras de arte y además ver nuestros trabajos realizados. Caracterizados por nuestros trabajos, compromiso y responsabilidades así como brindar servicio al cliente de calidad. </h5>
                                 </div>
                             </div>
 

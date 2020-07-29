@@ -5,7 +5,7 @@
 @section('body-class', 'product-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Portada.jpg') }}');">
+<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Imagen11.jpg') }}');">
    
 </div>
 
@@ -63,14 +63,14 @@
                         <label for="exampleFormControlFile1">Imagen de Perfil</label>
                         <input type="file" name="imagen" class="form-control-file" value="{{ old('imagen', $artist->imagen) }}">
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <label for="exampleFormControlFile1">Imagen de Portada</label>
                         <input type="file" name="imagenAlu" class="form-control-file" value="{{ old('imagenAlu', $artist->imagenAlu) }}">
                     </div>
                    
                    
                    
-                    <div class="form-group">
+                    <div class="col-sm-11">
                          <textarea class="form-control" placeholder="Descripción" rows="5" name="descripcion">{{ old('descripcion', $artist->descripcion) }}</textarea>
                     </div>
                     <button class="btn btn-success"><i class="material-icons">save</i> Guardar cambios</button>

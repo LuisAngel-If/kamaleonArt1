@@ -45,7 +45,7 @@ class ProductController extends Controller
             'precio.required' => 'Es necesario ingresar un precio',
             'technique_id.required' => 'Es necesario seleccionar una técnica',
             'type_id.required' => 'Es necesario seleccionar una tipo',
-            'genres_id.required' => 'Es necesario seleccionar una género',
+            'genre_id.required' => 'Es necesario seleccionar una género',
             'artist_id.required' => 'Es necesario seleccionar una artista'
         ];
         
@@ -59,7 +59,7 @@ class ProductController extends Controller
             'precio' => 'required|numeric|min:0',
             'technique_id' => 'required',
             'type_id' => 'required',
-            'genres_id' => 'required',
+            'genre_id' => 'required',
             'artist_id' => 'required'
 
         ];
@@ -87,7 +87,7 @@ class ProductController extends Controller
         $product->precio = $request->input('precio'); 
         $product->technique_id = $request->technique_id;
         $product->type_id = $request->type_id;
-        $product->genres_id = $request->genres_id;
+        $product->genre_id = $request->genre_id;
         $product->artist_id = $request->artist_id; 
         
         
@@ -165,7 +165,7 @@ class ProductController extends Controller
         $product->precio = $request->input('precio');
         $product->technique_id = $request->technique_id;
         $product->type_id = $request->type_id;
-        $product->genres_id = $request->genres_id;
+        $product->genre_id = $request->genre_id;
         $product->artist_id = $request->artist_id; 
         $product->save();   
 

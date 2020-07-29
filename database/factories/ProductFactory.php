@@ -18,7 +18,7 @@ $factory->define(Product::class, function (Faker $faker) {
 
         'technique_id' => $faker->numberBetween(1,5),
         'type_id' => $faker->numberBetween(1,5),
-        'genres_id' => $faker->numberBetween(1,5),
+        'genre_id' => $faker->numberBetween(1,5),
         'artist_id' => $faker->numberBetween(1,5)
 
     ];

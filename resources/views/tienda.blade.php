@@ -66,11 +66,22 @@
         .tt-suggestion p {
           margin: 0;
         }
+
+
+        .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover,
+        .pagination > .active > span,
+        .pagination > .active > span:focus,
+        .pagination > .active > span:hover {
+        background-color: #575c62;
+        border-color: #575c62;
+        color: #FFFFFF;
+        box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
+        }
     </style>
 @endsection
 
 @section('content')
-<div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">
+<div class="header header-filter" style="background-image: url('img/Empresa/Imagen11.jpg');">
     <div class="container">
         <div class="row">
            
@@ -79,53 +90,106 @@
 </div>
 
 <div class="main main-raised">
-    <div class="col-md-2">
-        <div class="card">
-            <!-- <div class="sidebar-heading" ><h5 style="color: #fab927;">Categorias<h5></div>
-                <div class="list-group list-group-flush">
-                    <a href="{{ url('/catalago') }}" class="list-group-item list-group-item-action bg-light"> <img src="img/todo.png" width="20" height="20" alt=""> Todos</a>
-                    <a href="{{ url('/catalago/modelados') }}" class="list-group-item list-group-item-action bg-light"><img src="img/modelado.png" width="20" height="20" alt="">Modelados</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+<nav class="navbar  navbar-absolute" style="background-color: #575c62;"<>
+	
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        
+        <div class="navbar-header">
+    
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> -->
+        
+            
+        
+        <a class="navbar-brand">
+         Puedes buscar por:
+        </a>
+        </div>
+        
 
-                            <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Artistas
-                            <i class="material-icons">keyboard_arrow_down</i>
-                            </a>
-                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" style="">
-                            @foreach($artistas as $artista)
-                            <div class="card-body">
+        <div class="collapse navbar-collapse" id="navigation-example">
+            <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre="">
+                    Géneros <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                @foreach($genres as $genre)
+                    <li>
+                        <a href="{{ url('/genre/'.$genre->id) }}" target="-blank">{{ $genre->name }}</a>
+                    </li>
+                @endforeach 
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre="">
+                    Artistas <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                @foreach($artistas as $artista)
+                    <li>
+                        <a href="{{ url('/artistass/'.$artista->id) }}" target="-blank">{{ $artista->name }}</a>
+                    </li>
+                @endforeach 
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre="">
+                    Técnicas <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                @foreach($techniques as $technique)
+                    <li>
+                        <a href="{{ url('/technique/'.$technique->id) }}" target="-blank">{{ $technique->name }}</a>
+                    </li>
+                @endforeach 
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre="">
+                    Tipo de obra <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                @foreach($types as $type)
+                    <li>
+                        <a href="{{ url('/type/'.$type->id) }}" target="-blank">{{ $type->name }}</a>
+                    </li>
+                @endforeach 
+                </ul>
+            </li>
+           
                     
-                                <div class="form-check">
-                            
-                                    <label class="form-check-label">
-                                       
-                                        <a href="{{ url('/tiendaart') }}">{{ $artista->name }}</a>
-                                        <span class="form-check-sign">
-                                        <span class="check"></span>
-                                        </span>
-                                    </label>
-                            
-                                </div>
-                       
-                        </div>
-                        @endforeach
-                   
-              
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light"></a>
-                </div>
-            </div> -->
+                                        <!-- <li>
+                    <a href="https://twitter.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/CreativeTim" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/CreativeTimOfficial" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li> -->
+            </ul>
         </div>
-        </div>
+    </div>
+</nav>
    
 
         <div class="section text-center">
@@ -133,7 +197,7 @@
 
                 <form class="form-inline" method="get" action="{{ url('/search') }}">
                     <input type="text" placeholder="¿Qué producto buscas?" class="form-control" name="query" id="search">
-                    <button class="btn btn-primary btn-just-icon" type="submit">
+                    <button class="btn btn-primary btn-just-icon" type="submit" style="background-color: #575c62;">
                         <i class="material-icons">search</i>
                     </button>
                 </form>
@@ -146,7 +210,7 @@
                         <div class="team-player">
                             <img src="img/{{ $product->imagen }}" alt="Thumbnail Image" class="img-rounded img-responsive-center">
                             <h4 class="title"> <a href="{{ url('/products/'.$product->id) }}"> {{ $product->name }} </a><br>
-                                <small class="text-muted"> {{ $product->artist ? $product->artist->nameArt: 'General' }} </small>
+                                <small class="text-muted"> {{ $product->genre ? $product->genre->name: 'General' }} </small>
                             </h4>
                             <h4 class="title">
                                 <small class="text-muted"> ${{ $product->precio }} </small>
@@ -161,7 +225,9 @@
                     @endforeach
                 </div>
                 <div class="text-center">
+                <ul class="pagination pagination-primary">
                     {{ $products->links() }}
+                </ul>
                 </div>
             </div>    
         </div>

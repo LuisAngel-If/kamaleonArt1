@@ -9,9 +9,7 @@ use App\Mail\NewOrder;
 use Mail;
 use App\Cart;
 
-#Convierte el carrito de compras activo en un pedido
-# pendiente para que el administrador decida si aprobarlo
-# o cancelarlo
+//Convierte el carrito de compras activo en un pedido, pendiente para que el administrador decida si aprobarlo o cancelarlo
 class CartController extends Controller
 {
     public function update(Request $req){
@@ -28,7 +26,8 @@ class CartController extends Controller
 		Mail::to($admins)->send(new NewOrder($client, $cart));
 
     	$notification = 'Tu pedido se ha registrado correctamente. Te contactaremos pronto vía mail!';
-    	return back()->with(compact('notification'));
+        return view('home')->with(compact('notification'));
+   
     }
 
     public function updateStatus(Request $req){
@@ -61,14 +60,4 @@ class CartController extends Controller
 
     }
 
-    private function generateCode($len){
-
-        $caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; //posibles caracteres a usar
-        $cadena = ""; //variable para almacenar la cadena generada
-        for($i=0;$i<$len;$i++)
-            $cadena .= substr($caracteres,rand(0,strlen($caracteres)),1); /*Extraemos 1 caracter de los caracteres 
-        entre el rango 0 a Numero de letras que tiene la cadena */
-        return $cadena;
-      
-    }
 }

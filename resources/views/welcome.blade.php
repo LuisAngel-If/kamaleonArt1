@@ -45,7 +45,7 @@
             
                 <h1 class="title">Bienvenido a {{ config('app.name')
                  }}</h1>
-                <h4>Aquí va una descripción de sobre la página o alguna frase</h4>
+                <h4>Por el placer de Ser, al hacer...</h4>
                 <br />
                 <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
                     <i class="fa fa-play"></i> Ver vídeo
@@ -62,7 +62,8 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="title" style="margin-bottom: 10px;">Servicio</h2>
-                    <h5 class="description text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+                    <h5 class="description text-justify">Ofrecemos clases de pintura donde aprenderás las técnicas necesarias para posteriormente tengas la capacidad de realizar tus propias obras de arte. Estamos ubicado en la calle 10, Avenida 7 y 9, No. 717, Colonia San José. Ven y aprende lo necesario!.</h5>
+                    <h5 class="description text-center">Por el placer de Ser, al hacer... </h5><br>
                 </div>
             </div>
 
@@ -72,28 +73,28 @@
                     <div class="col-md-4">
                         
                             <div class="icon icon-success">
-                                <img src="img/Empresa/art1.jpg" style="padding: 0px;" width="250" height="250" alt="..." class="img-thumbnail">
+                                <img src="img/Empresa/Imagen12.jpg" style="padding: 0px;" width="250" height="250" alt="..." class="img-thumbnail">
                             </div>
-                            <h4 class="info-title">Primera  imagen</h4>
-                            <p>Descripción sobre la imagen.</p>
+                            <h4 class="info-title">Técnica de carboncillo</h4>
+                            <!-- <p>Descripción sobre la imagen.</p> -->
                         
                     </div>
                     <div class="col-md-4">
                         
                             <div class="icon icon-success">
-                                <img src="img/Empresa/art1.jpg" style="padding: 0px;" width="250" height="250" alt="..." class="img-thumbnail">
+                                <img src="img/Empresa/Imagen14.jpg" style="padding: 0px;" width="250" height="250" alt="..." class="img-thumbnail">
                             </div>
-                            <h4 class="info-title">Segunda imagen</h4>
-                            <p>Descripción sobre la imagen.</p>
+                            <h4 class="info-title">Técnica mixta</h4>
+                            <!-- <p>Descripción sobre la imagen.</p> -->
                         
                     </div>
                     <div class="col-md-4">
                         
                         <div class="icon icon-success">
-                            <img src="img/Empresa/art1.jpg" width="250" style="padding: 0px;" height="250" alt="..." class="img-thumbnail">
+                            <img src="img/Empresa/Imagen15.jpg" width="250" style="padding: 0px;" height="250" alt="..." class="img-thumbnail">
                         </div>
-                        <h4 class="info-title">Tercera imagen</h4>
-                        <p>Descripción sobre la imagen</p>
+                        <h4 class="info-title">Técnica con acrílico</h4>
+                        <!-- <p>Descripción sobre la imagen</p> -->
                     
                 </div>
                 </div>

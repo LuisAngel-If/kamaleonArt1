@@ -11,14 +11,22 @@
             .invisible {
             visibility: hidden;
             }
+            .icon.icon-info {
+                color: #b82c2c;
+            }
 
+            .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+                background-color: #575c62;
+                color: #FFFFFF;
+                box-shadow: 0 16px 26px -10px rgba(156, 39, 176, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+            }
 
          
     </style>
 @endsection
 
 @section('content')
-<div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">
+<div class="header header-filter" style="background-image: url('img/Empresa/Imagen3.jpg');">
    
 </div>
 
@@ -71,7 +79,7 @@
             
                 <div class="tab-pane active" id="cart">
                     <!--@yield("content_dashboard_cart")-->
-                
+                    @if(auth()->user()->cart->details->count() > 0)
                     <hr>   
                     <p> Tu carrito de compras tiene {{ auth()->user()->cart->details->count() }} productos </p> 
                     <table class="table">
@@ -136,7 +144,8 @@
 
            
 
-                    <form class="pago" method="POST" id="payment-form" action="{!! URL::to('paypal/pay') !!}">            
+                    <form class="pago" method="POST" id="payment-form" action="{!! URL::to('paypal/pay') !!}">    
+                            
                         {{ csrf_field() }}
                         <input  type="hidden" id="total" type="text" name="total" value="{{$total}}">
                         <div class="paypal">
@@ -145,10 +154,18 @@
                             </div> 
                         </div> 
                     </form>
-                    
-
-
-                
+                    @else
+                    <div class="row">
+                        <div class="col-md-12">  
+                            <div class="info">
+                                <div class="icon icon-info text-center">
+                                    <i class="material-icons">warning</i>
+                                </div>
+                                <div class="text-center"><h2>Tu carrito de compras esta vacio, agrega productos para comprar</h2></div>
+                            </div> 
+                        </div>
+                    </div>
+                    @endif
                 </div>
             <!--End Carrito -->
 
@@ -218,7 +235,7 @@
 
                     <div class="team">
                 <div class="row">
-           
+       
                 <table class="table">
                     <thead>
                         <tr>
@@ -255,6 +272,7 @@
                     </tbody>
                     @endforeach
                 </table>
+                
               
                 </div>
             </div>

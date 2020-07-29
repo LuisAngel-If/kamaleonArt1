@@ -30,8 +30,8 @@ class CreateProductsTable extends Migration
             $table->integer('type_id')->unsigned()->nullable();
             $table->foreign('type_id')->references('id')->on('types');
 
-            $table->integer('genres_id')->unsigned()->nullable();
-            $table->foreign('genres_id')->references('id')->on('genres');
+            $table->integer('genre_id')->unsigned()->nullable();
+            $table->foreign('genre_id')->references('id')->on('genres');
 
             $table->integer('artist_id')->unsigned()->nullable();
             $table->foreign('artist_id')->references('id')->on('artists');

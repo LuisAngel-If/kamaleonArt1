@@ -22,7 +22,7 @@ Route::get('/products/json', 'SearchController@data');
 Route::get('/products/{id}', 'ProductController@show'); //mostrar
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/products/{id}', 'ProductController@show'); //mostrar
+
 Route::get('/artists/{id}', 'ProductController@showArt'); //mostrar
 Route::get('/techniques/{techniques}', 'TechniqueController@show'); //mostrar
 Route::get('/nosotros', function () {
@@ -43,10 +43,26 @@ Route::get('/galeria', function () {
 Route::get('/paypal/results', 'TestController@results');
 
 Route::get('/tienda', 'TestController@welcome');
+
 Route::get('/tiendaart', 'TestController@listarArt1');
-// Route::get('/tiendaart', 'TestController@listarArt');
 
 Route::get('/artistas', 'TestController@welcome1');
+
+Route::get('/genre/{id}', 'TestController@welcome');
+Route::get('/genre/{id}', 'TestController@welcomeA');
+Route::get('/genre/{id}', 'ProductController@showG'); //mostrar
+
+Route::get('/type/{id}', 'TestController@welcome');
+Route::get('/type/{id}', 'TestController@welcomeA');
+Route::get('/type/{id}', 'ProductController@showTy'); //mostrar
+
+Route::get('/technique/{id}', 'TestController@welcome');
+Route::get('/technique/{id}', 'TestController@welcomeA');
+Route::get('/technique/{id}', 'ProductController@showTe'); //mostrar
+
+Route::get('/artistass/{id}', 'TestController@welcome');
+Route::get('/artistass/{id}', 'TestController@welcomeA');
+Route::get('/artistass/{id}', 'ProductController@showA'); //mostrar
 
 // Route::get('/prueba', 'CartDetailController@listarPedidos');
 

@@ -39,7 +39,7 @@ class MensajeController extends Controller
     $message->descripcion = $request->input('descripcion');
     $message->save();
 
-    $notification = "Tu mensaje ha sido enviado, tan pronto nos podremos en contacto!.";
+    $notification = "Tu mensaje ha sido enviado, tan pronto nos ponremos en contacto!";
     return back()->with(compact('notification'));
     }
 

@@ -37,7 +37,8 @@
                     <form method="post" action="{{ url('/order') }}">
                         {{ csrf_field() }}
                         <button type="submit" class="btn btn-success btn-round">
-                            <i class="material-icons">assignment_return</i>Confirmar compra!
+                            <i class="material-icons">assignment_return</i>Confirmar
+                            
                         </button>
                     </form>
                 </div>

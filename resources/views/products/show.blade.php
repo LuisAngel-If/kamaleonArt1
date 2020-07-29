@@ -39,7 +39,7 @@
 
 @section('content')
 
-<div class="header header-filter" style="background-image: url('../img/Empresa/Portada.jpg');"></div>
+<div class="header header-filter" style="background-image: url('../img/Empresa/Imagen11.jpg');"></div>
 
 <div class="main main-raised">
     <div class="profile-content">
@@ -112,33 +112,50 @@
                     <div class="profile-tabs">
                         <div class="nav-align-center">
                           
-
+                        
                             <div class="tab-content gallery">
+                                
                                 <div class="tab-pane active" id="studio">
-                                 
+                                
                                         
                                         <div class="description text-center" style="color:#000;">
-                                            <p> Artista: {{ $product->artist ? $product->artist->nameArt: 'General' }} </p>
+                                            <p> Artista: {{ $product->artist ? $product->artist->name: 'General' }} {{ $product->artist ? $product->artist->Ap: 'General' }} {{ $product->artist ? $product->artist->Am: 'General' }} mejor conocido como: {{ $product->artist ? $product->artist->nameArt: 'General' }}  </p>
                                         </div>
                                         <div class="description text-center" style="color:#000;">
                                             <p> Técnica: {{ $product->technique ? $product->technique->name: 'General' }} </p>
                                         </div>
-                                        <!-- <div class="description text-center" style="color:#000;">
-                                            <p> Género: {{ $product->genre ? $product->genre->id: 'General' }} </p>
-                                        </div> -->
+                                        <div class="description text-center" style="color:#000;">
+                                            <p> Género: {{ $product->genre ? $product->genre->name: 'General' }} </p>
+                                        </div>
                                         <div class="description text-center" style="color:#000;">
                                             <p> Tipo de Obra: {{ $product->type ? $product->type->name: 'General' }} </p>
                                         </div>
                                         <div class="description text-center" style="color:#000;">
-                                            <p> Descripción: {{ $product->descripcion }} </p>
+                                            <p> Dimensiones: {{ $product->dimensiones }}  </p>
+                                        </div>
+                                        <div class="description text-center" style="color:#000;">
+                                            <p> Estilo: {{ $product->estilo }}  </p>
+                                        </div>
+                                        <div class="description text-center" style="color:#000;">
+                                            <p> Fecha de creación: {{ $product->fecha }}  </p>
                                         </div>
                                         <div class="description text-center" style="color:#000;">
                                             <p> Precio en MXN: {{ $product->precio }}  </p>
                                         </div>
+                                        <div class="text-center">
+                                            <div class="panel-body">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                Descripción: {{ $product->descripcion }}
+                                             </div>
+                                            </div>
+                                        </div>
                                        
-                                    </div>
-                                    
                                 </div>
+                                    
+                            </div>
+         
+                        
+                     
                                 <div class="text-center">
                                 
                                     @if (auth()->check())

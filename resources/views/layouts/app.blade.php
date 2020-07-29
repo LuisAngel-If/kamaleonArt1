@@ -22,6 +22,13 @@
 	@yield('styles')
 </head>
 
+@section('styles')
+    <style>
+
+
+    </style>
+@endsection
+
 <body class="@yield('body-class')">
 
 	<nav class="navbar navbar-transparent navbar-absolute">

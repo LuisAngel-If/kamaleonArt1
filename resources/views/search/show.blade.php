@@ -27,7 +27,7 @@
 @endsection
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Portada.jpg') }}');"></div>
+<div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Imagen11.jpg') }}');"></div>
 
 <div class="main main-raised">
     <div class="profile-content">
@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="profile">
                     <div class="avatar">
-                        <img src="img/icon/lupa.png" alt="Imagen de una lupa que representa a la página de resultados" class="img-circle img-responsive img-raised">
+                        <img src="img/icon/lupaa.png"  alt="Imagen de una lupa que representa a la página de resultados" class="img-circle img-responsive img-raised">
                     </div>
 
                     <div class="name">
@@ -59,11 +59,13 @@
                     @foreach ($products as $product)
                     <div class="col-md-4">
                         <div class="team-player">
-                            <img src="img/{{ $product->imagen }}" alt="Thumbnail Image" class="img-raised img-circle">
-                            <h4 class="title">
-                                <a href="{{ url('/products/'.$product->id) }}">{{ $product->name }}</a>
+                        <img src="img/{{ $product->imagen }}" alt="Thumbnail Image" class="img-rounded img-responsive-center">
+                            <h4 class="title"> <a href="{{ url('/products/'.$product->id) }}"> {{ $product->name }} </a><br>
+                                <small class="text-muted"> {{ $product->artist ? $product->artist->nameArt: 'General' }} </small>
                             </h4>
-                            <p class="description">{{ $product->description }}</p>
+                            <h4 class="title">
+                                <small class="text-muted"> ${{ $product->precio }} </small>
+                            </h4>
                         </div>
                     </div>
                     @endforeach

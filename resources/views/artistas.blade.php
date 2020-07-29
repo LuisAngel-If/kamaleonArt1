@@ -37,7 +37,7 @@
 @endsection
 
 @section('content')
-<div class="header header-filter" style="background-image: url('img/Empresa/Portada.jpg');">
+<div class="header header-filter" style="background-image: url('img/Empresa/Imagen2.1.jpg');">
     <div class="container">
         <div class="row">
            

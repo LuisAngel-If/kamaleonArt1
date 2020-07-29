@@ -106,7 +106,7 @@
                     <div class="col-sm-2">
                         <div class="form-group label-floating">
                             <label class="control-label">Género</label>
-                            <select class="form-control" name="genres_id">
+                            <select class="form-control" name="genre_id">
                                 <option value="0">Seleccionar...</option>
                                 @foreach ($genres as $genre)
                                 <option value="{{ $genre->id }}">{{ $genre->name }}</option>

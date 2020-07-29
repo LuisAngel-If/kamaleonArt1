@@ -4,6 +4,26 @@
 
 @section('body-class', 'product-page')
 
+@section('styles')
+    <style>
+
+
+        .team {
+            margin-top: 0px; 
+        }
+
+        .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover,
+        .pagination > .active > span,
+        .pagination > .active > span:focus,
+        .pagination > .active > span:hover {
+        background-color: #575c62;
+        border-color: #575c62;
+        color: #FFFFFF;
+        box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
+        }
+    </style>
+@endsection
+
 @section('content')
 <div class="header header-filter" style="background-image: url('{{ asset('img/Empresa/Portada.jpg') }}');">
     
@@ -34,7 +54,7 @@
             
             <div class="team">
                 <div class="row">
-                <a href="{{ url('/admin/types/create') }}" class="btn btn-primary"> <i class="material-icons">add_circle_outline</i> Nuevo Tipos de Obras</a>
+                <a href="{{ url('/admin/types/create') }}" style="background-color: #575c62;" class="btn btn-primary"> <i class="material-icons">add_circle_outline</i> Nuevo Tipos de Obras</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -55,9 +75,9 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 
-                                <a href="{{ url('/types/'.$type->id) }}" rel="tooltip" title="Ver Técnica" class="btn btn-info btn-simple btn-xs" target="_blank">
+                                <!-- <a href="{{ url('/types/'.$type->id) }}" rel="tooltip" title="Ver Técnica" class="btn btn-info btn-simple btn-xs" target="_blank">
                                     <i class="fa fa-info"></i>
-                                </a>
+                                </a> -->
                                 <a href="{{ url('/admin/types/'.$type->id.'/edit') }}" rel="tooltip" title="Editar Técnica" class="btn btn-success btn-simple btn-xs">
                                     <i class="fa fa-edit"></i>
                                 </a>

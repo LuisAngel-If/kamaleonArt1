@@ -37,12 +37,12 @@ class PaymentController extends Controller
     }
 
     public function payWithpaypal(Request $request)
-    {
+    {//procesa el pago
         
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
-        $amount = new Amount();
+        $amount = new Amount();//total que se paga
            $amount->setCurrency('MXN')
             ->setTotal($request->get('total'));
         
@@ -57,8 +57,8 @@ class PaymentController extends Controller
         
 
         $redirectUrls = new RedirectUrls();
-        $redirectUrls->setReturnUrl($callbackUrl)
-            ->setCancelUrl($callbackUrl);
+        $redirectUrls->setReturnUrl($callbackUrl)//ha pagado
+            ->setCancelUrl($callbackUrl);//no ha pagado y cancelo el pago
 
         $payment = new Payment();
         $payment->setIntent('sale')
@@ -67,8 +67,8 @@ class PaymentController extends Controller
             ->setRedirectUrls($redirectUrls);
 
         try {
-            $payment->create($this->_api_context);
-            return redirect()->away($payment->getApprovalLink());
+            $payment->create($this->_api_context);//paypal crea un pago
+            return redirect()->away($payment->getApprovalLink());//acceso aprovado por paypal, away para ir directo a la url de paypal
         } catch (PayPalConnectionException $ex) {
             echo $ex->getData();
         }
@@ -95,7 +95,7 @@ class PaymentController extends Controller
         //dd($result);
 
         if ($result->getState() === 'approved') {
-            $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente. Por favor este atento a tu correo electrónico.';
+            $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente. Por favor de clic al botón "Confirmar" y posteriormente este al pendiente de su correo electrónico';
             return redirect('/paypal/results')->with(compact('status'));
         }
 
