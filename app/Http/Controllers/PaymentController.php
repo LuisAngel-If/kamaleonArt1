@@ -95,7 +95,7 @@ class PaymentController extends Controller
         //dd($result);
 
         if ($result->getState() === 'approved') {
-            $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente. Por favor de clic al botón "Confirmar" y posteriormente este al pendiente de su correo electrónico';
+            $status = '!Gracias! El pago a través de PayPal se ha ralizado correctamente. Por favor de clic al botón "Confirmar" y posteriormente este al pendiente de su correo electrónico';
             return redirect('/paypal/results')->with(compact('status'));
         }
 

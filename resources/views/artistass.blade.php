@@ -105,7 +105,7 @@
                     <div class="col-xs-3 col-sm-3 col-md-3 text-center">
                         
                         <div class="team-player">
-                            <img src="img/{{ $product->imagen }}" alt="Thumbnail Image" class="img-rounded img-responsive-center">
+                            <img src="../img/{{ $product->imagen }}" alt="Thumbnail Image" class="img-rounded img-responsive-center">
                             <h4 class="title"> <a href="{{ url('/products/'.$product->id) }}"> {{ $product->name }} </a><br>
                                 <small class="text-muted"> {{ $product->artist ? $product->artist->name: 'General' }} </small>
                             </h4>
