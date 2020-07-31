@@ -39,21 +39,21 @@
 									
 									<div class="carousel-inner">
 										<div class="item">
-											<img src="img/Empresa/Portada.jpg" alt="Awesome Image">
+											<img src="img/Empresa/Imagen2.1.jpg" alt="Awesome Image">
 											<div class="carousel-caption">
-												<h4><i class="material-icons">palette</i> Julián Miguel Salas - Nombre de la obra</h4>
+												<h4><i class="material-icons">palette</i> Julián Miguel Salas - Efímero Abril</h4>
 											</div>
 										</div>
 										<div class="item active">
-											<img src="img/Empresa/Portada.jpg" alt="Awesome Image">
+											<img src="img/Empresa/Imagen2.1.jpg" alt="Awesome Image">
 											<div class="carousel-caption">
-												<h4><i class="material-icons">palette</i> Julián Miguel Salas - Nombre de la obra</h4>
+												<h4><i class="material-icons">palette</i> Julián Miguel Salas - Efímero Abril</h4>
 											</div>
 										</div>
 										<div class="item">
 											<img src="img/Empresa/Portada.jpg" alt="Awesome Image">
 											<div class="carousel-caption">
-												<h4><i class="material-icons">palette</i> Julián Miguel Salas - Nombre de la obra</h4>
+												<h4><i class="material-icons">palette</i> Julián Miguel Salas - Efímero Abril</h4>
 											</div>
 										</div>
 									</div>
