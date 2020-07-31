@@ -84,12 +84,7 @@
                                                     <em id="facebook" class="fa fa-stack-1x fa-facebook" style="color: #ffffff"></em>
                                                 </span>
                                             </a>
-                                            <a href="{{ $artist->urlFa }}" target="_blank" class="btnTransparentFooter" style="color:#1e6172;">
-                                                <span class="fa-stack fa-2x">
-                                                    <em class="fa fa-circle fa-stack-2x iconGrayColor"></em>
-                                                    <em id="facebook" class="fa fa-stack-1x fa-facebook" style="color: #ffffff"></em>
-                                                </span>
-                                            </a>
+                                          
 								        </div>
                                   
                                 </div>
