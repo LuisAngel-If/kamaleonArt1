@@ -149,8 +149,8 @@
                         {{ csrf_field() }}
                         <input  type="hidden" id="total" type="text" name="total" value="{{$total}}">
                         <div class="paypal">
-                            <div class="row justify-content-end">                
-                                <button class="btn btn-success">Comprar</button>
+                            <div class="text-center">                
+                                <button class="btn btn-success" style="background-color: #3d898f;">Comprar por Paypal</button>
                             </div> 
                         </div> 
                     </form>
